@@ -7,6 +7,7 @@
   <EnableMsixTooling>false</EnableMsixTooling><ApplicationManifest>app.manifest</ApplicationManifest>
   <Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings><AssemblyName>CodexWatch</AssemblyName><AssemblyTitle>Codex Watch</AssemblyTitle><Product>Codex Watch</Product><Description>Codex Watch quota monitor</Description>
  </PropertyGroup>
+ <PropertyGroup><Version>1.0.0</Version><AssemblyVersion>1.0.0.0</AssemblyVersion><FileVersion>1.0.0.0</FileVersion></PropertyGroup>
  <ItemGroup>
   <PackageReference Include="Microsoft.WindowsAppSDK.WinUI" Version="2.3.9" />
   <PackageReference Include="Microsoft.WindowsAppSDK.InteractiveExperiences" Version="2.1.9" />
@@ -15,7 +16,8 @@
   <Compile Include="..\CodexAppServerClient.cs" Link="Services\CodexAppServerClient.cs" />
  </ItemGroup>
  <Target Name="PublishXamlResources" AfterTargets="Publish">
-  <ItemGroup><XamlRuntimeResources Include="$(TargetDir)CodexWatch.pri;$(TargetDir)*.xbf" /></ItemGroup>
+  <PropertyGroup><Version>1.0.0</Version><AssemblyVersion>1.0.0.0</AssemblyVersion><FileVersion>1.0.0.0</FileVersion></PropertyGroup>
+ <ItemGroup><XamlRuntimeResources Include="$(TargetDir)CodexWatch.pri;$(TargetDir)*.xbf" /></ItemGroup>
   <Copy SourceFiles="@(XamlRuntimeResources)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="true" />
  </Target>
 </Project>

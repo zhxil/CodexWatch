@@ -41,7 +41,7 @@ Windows 专用的额度监控工具。默认常驻任务栏：单击摘要展开
 
 ## 验证与边界
 
-`verification/AlertPolicyChecks.csproj` 包含提醒阈值、升级、去重、重置秒级抖动、过期数据和夜间免打扰检查。`verification/verify-wheel.ps1` 在隔离配置和真实桌面上注入鼠标滚轮，验证上下滚动及设置按钮可达。
+`verification/AlertPolicyChecks.csproj` 包含提醒阈值、升级、去重、重置秒级抖动、过期数据和夜间免打扰检查。本地桌面验证脚本另行验证滚轮上下滚动及设置按钮可达；本机诊断记录不随源码提交。
 
 任务栏摘要沿用原生 Win32 子窗口方案，目前面向主屏、水平、居中的 Windows 11 任务栏；左对齐时隐藏摘要并保留托盘入口。任务栏自动隐藏、Explorer 重启恢复及多屏不同缩放的完整回归仍需单独验证。任务栏嵌入不是 WinUI 官方扩展点。
 
@@ -59,6 +59,6 @@ Windows“设置 → 应用 → 启动”显示名称为 `CodexWatch`。系统�
 
 `--startup` 后台启动，即使上次固定了面板也不自动展开；正常手动启动仍恢复固定状态。单实例互斥避免重复启动。移动发布目录后需从新位置重新开启。
 
-修复证据：`startup-diagnosis-before.json` 记录旧 Run 项未出现在系统枚举，`startup-diagnosis-after.json` 记录迁移后系统识别，`windows-startup-settings.png` 是 Windows 启动页的实际显示。`verify-startup.ps1` 覆盖快捷方式创建/删除、参数及工作目录、系统禁用状态、无关值保护、后台和单实例。
+以下诊断记录保留在开发机，不随源码或发布包分发：`startup-diagnosis-before.json` 记录旧 Run 项未出现在系统枚举，`startup-diagnosis-after.json` 记录迁移后系统识别，`windows-startup-settings.png` 是 Windows 启动页的实际显示。`verify-startup.ps1` 覆盖快捷方式创建/删除、参数及工作目录、系统禁用状态、无关值保护、后台和单实例。
 
 `actual-shortcut-launch-receipt.json` / `startup-final-check.json` 验证实际快捷方式启动后任务栏就绪，**不代表已完成真实重启**。每次携带 `--startup` 启动会写入 `%LOCALAPPDATA%/CodexWatch.WinUI/startup-launch-receipt.json`，可在下次真实登录后核对时间和进程。

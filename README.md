@@ -7,6 +7,26 @@ Windows 11 上的 Codex 额度监控工具，当前版本使用 WinUI 3。
 - 圆环额度概览，可固定为桌面悬浮面板，支持浅色和深色主题。
 - 支持额度预警、重置与手动重置机会到期提醒、免打扰和开机启动。
 
+## 下载
+
+[下载最新 Windows x64 自包含版本](https://github.com/zhxil/CodexWatch/releases/latest)。解压整个文件夹后运行 `CodexWatch.exe`，无需单独安装 .NET 或 Windows App SDK 运行时。首次使用需先安装并登录 Codex。
+
+## 实机截图
+
+以下为 Windows 11 上实际运行的 v1.0.0 界面，额度和用量随账户变化。
+
+任务栏常驻胶囊：
+
+![任务栏摘要](docs/screenshots/taskbar.png)
+
+| 额度详情与桌面悬浮面板 | 悬停摘要：重置与失效时间 |
+| --- | --- |
+| ![额度详情](docs/screenshots/overview-dark.png) | ![悬停摘要](docs/screenshots/hover-dark.png) |
+
+提醒与开机启动设置：
+
+<img src="docs/screenshots/settings-dark.png" alt="提醒设置" width="360" />
+
 ## 使用与构建
 
 先安装并登录 Codex。开发环境需要 Windows 和 .NET 10 SDK，在 PowerShell 中运行：
