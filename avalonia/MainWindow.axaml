@@ -1,0 +1,37 @@
+<Window x:Class="CodexQuotaTray.Avalonia.MainWindow"
+ xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:local="using:CodexQuotaTray.Avalonia" Title="Codex Watch"
+ Width="228" Height="156" CanResize="False" ShowInTaskbar="False" Topmost="True"
+ SystemDecorations="None" Background="Transparent" TransparencyLevelHint="Transparent">
+ <Grid>
+ <Border x:Name="Card" BorderBrush="#494A4D" BorderThickness="1" CornerRadius="10" Padding="12,10">
+  <Border.Background><LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%"><GradientStop Color="#FA292A2C" Offset="0"/><GradientStop Color="#FA202123" Offset="0.65"/><GradientStop Color="#FA252628" Offset="1"/></LinearGradientBrush></Border.Background>
+  <Grid RowDefinitions="14,8,27,7,27,9,16,5,12">
+   <Grid ColumnDefinitions="*,Auto">
+    <StackPanel Orientation="Horizontal" Spacing="6"><Ellipse x:Name="StatusDot" Width="5" Height="5" Fill="#989DA5"/><local:SpinnerControl x:Name="Spinner" Width="7" Height="7" IsVisible="False"/><TextBlock Text="CODEX / WATCH" FontSize="10" FontWeight="SemiBold" Foreground="#DCDCDC"/></StackPanel>
+    <Button x:Name="CloseDetails" Grid.Column="1" Content="×" FontSize="14" Width="20" Height="18" MinHeight="0" Padding="0" Background="Transparent" Foreground="#CCCCCC" ToolTip.Tip="关闭详情（Esc）"/>
+   </Grid>
+   <Grid Grid.Row="2" RowDefinitions="18,0,9">
+    <Grid ColumnDefinitions="Auto,*,Auto">
+     <TextBlock Text="短周期" FontSize="11" Foreground="#D0D1D4"/>
+     <TextBlock x:Name="ShortReset" Grid.Column="1" Text="暂无数据" FontSize="9" Foreground="#AAAAAA" Margin="7,2,4,0" TextTrimming="CharacterEllipsis"/>
+     <TextBlock FontFamily="Cascadia Mono, Consolas" x:Name="ShortValue" Grid.Column="2" Text="—" FontSize="14" FontWeight="SemiBold" Foreground="#E1E2E5"/>
+    </Grid>
+    <local:QuotaBarControl x:Name="ShortBar" Grid.Row="2" Height="9" Foreground="#CCCCCC"/>
+   </Grid>
+   <Grid Grid.Row="4" RowDefinitions="18,0,9">
+    <Grid ColumnDefinitions="Auto,*,Auto">
+     <TextBlock Text="周剩余" FontSize="11" Foreground="#D0D1D4"/>
+     <TextBlock x:Name="WeekReset" Grid.Column="1" Text="暂无数据" FontSize="9" Foreground="#AAAAAA" Margin="7,2,4,0" TextTrimming="CharacterEllipsis"/>
+     <StackPanel Grid.Column="2" Orientation="Horizontal"><TextBlock FontFamily="Cascadia Mono, Consolas" x:Name="HeroValue" Text="—" FontSize="14" FontWeight="SemiBold" Foreground="#E1E2E5"/><TextBlock x:Name="HeroPercent" Text="%" FontSize="11" Foreground="#CCCCCC" IsVisible="False"/></StackPanel>
+    </Grid>
+    <local:QuotaBarControl x:Name="WeekBar" Grid.Row="2" Height="9" Foreground="#CCCCCC"/>
+   </Grid>
+   <Grid Grid.Row="6" ColumnDefinitions="*,Auto"><TextBlock Text="今日 Token" FontSize="11" Foreground="#B8BABF"/><TextBlock FontFamily="Cascadia Mono, Consolas" x:Name="TokenValue" Grid.Column="1" Text="统计中" FontSize="11" Foreground="#E1E2E5"/></Grid>
+   <TextBlock x:Name="Freshness" Grid.Row="8" Text="本机统计 · 等待同步" FontSize="9" Foreground="#AAAAAA"/>
+   <local:QuotaGaugeControl x:Name="QuotaGauge" IsVisible="False"/><Border x:Name="QuotaMarker" IsVisible="False"/>
+  </Grid>
+ </Border>
+
+ </Grid>
+</Window>

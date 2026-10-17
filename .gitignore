@@ -1,0 +1,29 @@
+# Build output and local dependency caches
+**/bin/
+**/obj/
+dist/
+tools/
+.dotnet-cli/
+**/.verify/
+.vs/
+.idea/
+*.user
+*.suo
+*.log
+# Local diagnostics can contain account usage and machine details
+verification/*
+!verification/AlertPolicyChecks.cs
+!verification/AlertPolicyChecks.csproj
+!verification/capture-panel.ps1
+!verification/capture-taskbar.ps1
+# Local rendered previews
+design-previews/
+# Credentials and machine settings
+.env
+.env.*
+auth.json
+settings.json
+
+# Avalonia build telemetry
+**/AvaloniaUI/
+**/.avalonia-build-tasks/

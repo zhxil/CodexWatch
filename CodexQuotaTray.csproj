@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>CodexQuotaTray</AssemblyName>
+    <RootNamespace>CodexQuotaTray</RootNamespace>
+    <ApplicationIcon />
+    <Platforms>AnyCPU</Platforms>
+  </PropertyGroup>
+  <ItemGroup><Compile Remove="avalonia\**;winui\**;tools\**;verification\**" /></ItemGroup>
+</Project>

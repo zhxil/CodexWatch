@@ -1,0 +1,38 @@
+<Application x:Class="CodexQuotaTray.Avalonia.App"
+ xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" RequestedThemeVariant="Dark">
+ <Application.Resources>
+  <SolidColorBrush x:Key="MenuFlyoutPresenterBackground">#292A2D</SolidColorBrush>
+  <SolidColorBrush x:Key="MenuFlyoutPresenterBorderBrush">#494A4D</SolidColorBrush>
+  <SolidColorBrush x:Key="MenuFlyoutItemBackgroundPointerOver">#3A3C41</SolidColorBrush>
+  <SolidColorBrush x:Key="MenuFlyoutItemBackgroundPressed">#44474D</SolidColorBrush>
+  <SolidColorBrush x:Key="MenuFlyoutItemForeground">#D8DADD</SolidColorBrush>
+  <SolidColorBrush x:Key="MenuFlyoutItemForegroundDisabled">#ADB0B7</SolidColorBrush>
+ </Application.Resources>
+ <Application.Styles>
+  <FluentTheme />
+  <Style Selector="ContextMenu">
+   <Setter Property="FontSize" Value="11"/>
+   <Setter Property="MinWidth" Value="184"/>
+   <Setter Property="Padding" Value="4"/>
+   <Setter Property="Background" Value="#292A2D"/>
+   <Setter Property="BorderBrush" Value="#494A4D"/>
+   <Setter Property="BorderThickness" Value="1"/>
+   <Setter Property="CornerRadius" Value="8"/>
+  </Style>
+  <Style Selector="ContextMenu MenuItem">
+   <Setter Property="FontSize" Value="11"/>
+   <Setter Property="MinHeight" Value="25"/>
+   <Setter Property="Padding" Value="8,4"/>
+   <Setter Property="Foreground" Value="#D8DADD"/>
+  </Style>
+  <Style Selector="ContextMenu MenuItem:disabled">
+   <Setter Property="Foreground" Value="#ADB0B7"/>
+   <Setter Property="FontSize" Value="10"/>
+   <Setter Property="MinHeight" Value="21"/>
+  </Style>
+  <Style Selector="ContextMenu Separator">
+   <Setter Property="Margin" Value="8,5"/>
+   <Setter Property="Background" Value="#424449"/>
+  </Style>
+ </Application.Styles>
+</Application>
